@@ -24,6 +24,7 @@ APlayerPawn::APlayerPawn()
 	Camera->SetupAttachment(StaticMesh);
 	SetRootComponent(StaticMesh);
 	playerController = UGameplayStatics::GetPlayerController(this, 0);
+	
 
 }
 
@@ -83,6 +84,12 @@ void APlayerPawn::Redress()
 	moveLeft = false;
 }
 
+APlayerController* APlayerPawn::returnPlayerID()
+{
+	
+	return playerController;
+}
+
 void APlayerPawn::DoOnce()
 {
 	/*if (isPressed == true) {
@@ -140,7 +147,7 @@ void APlayerPawn::Tick(float DeltaTime)
 		}
 		FRotator newRotation = FRotator(PitchValue, YawValue, RollValue);
 		FQuat qRotation = FQuat(newRotation);
-		if (this->GetActorRotation().Yaw < 20) {
+		if (this->GetActorRotation().Yaw < rotationAngle) {
 			this->AddActorLocalRotation(qRotation, false, 0, ETeleportType::None);
 			isPressed = true;
 		}
@@ -152,7 +159,7 @@ void APlayerPawn::Tick(float DeltaTime)
 		}
 		FRotator newRotation = FRotator(PitchValue, YawValue, RollValue);
 		FQuat qRotation = FQuat(newRotation);
-		if (this->GetActorRotation().Yaw > -20) {
+		if (this->GetActorRotation().Yaw > -rotationAngle) {
 			this->AddActorLocalRotation(qRotation, false, 0, ETeleportType::None);
 			isPressed = false;
 		}

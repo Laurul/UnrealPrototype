@@ -46,7 +46,7 @@ protected:
 		UStaticMeshComponent* StaticMesh;
 
 
-	UPROPERTY(EditAnywhere, Category = "Components")
+	UPROPERTY(EditAnywhere, Category = "Components", BlueprintReadWrite)
 		class UCameraComponent* Camera;
 
 	UPROPERTY(EditAnywhere)
@@ -58,7 +58,9 @@ protected:
 		float YawValue;
 	UPROPERTY(EditAnywhere, Category = "Movement")
 		float RollValue;
-
+	UPROPERTY(BlueprintReadWrite)
+		float rotationAngle;
+	
 
 public:
 	// Called every frame
@@ -80,13 +82,16 @@ public:
 		void PressedFalse();
 	UFUNCTION(BlueprintCallable)
 		void Redress();
+	UFUNCTION(BlueprintCallable)
+		APlayerController* returnPlayerID();
 
 private:
 	FTimerHandle timerHandle;
 	int currentTrack = 0;
 	bool moveRight = false;
 	bool moveLeft = false;
-	APlayerController* playerController;
+	
+		APlayerController* playerController;
 	FVector2D TouchStart2dVector;
 	FVector2D TouchEnd2dVector;
 	bool isPressed = false;

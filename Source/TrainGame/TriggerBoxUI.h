@@ -35,6 +35,8 @@ public:
         bool goLeft;
     UPROPERTY(EditAnywhere, Category = "Trigger Behaviour", BlueprintReadWrite)
         bool beginMinigame;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Movement")
+        float rotationAngle;
 
     UPROPERTY(EditAnywhere, Category = "Movement")
         float PitchValue;
@@ -42,6 +44,7 @@ public:
         float YawValue;
     UPROPERTY(EditAnywhere, Category = "Movement")
         float RollValue;
+   
     /*   UPROPERTY(EditAnywhere, Category = "Player")
           class PlayerPawn* playerToManage;*/
 
