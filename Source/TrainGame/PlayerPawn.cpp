@@ -173,6 +173,11 @@ void APlayerPawn::Tick(float DeltaTime)
 			if (this->GetActorRotation().Yaw > 0) {
 				this->AddActorLocalRotation(qRotation, false, 0, ETeleportType::None);
 			}
+			if (this->GetActorRotation().Yaw < 0) {
+				 newRotation = FRotator(0.0f, 0.0f, 0.0f);
+				 qRotation = FQuat(newRotation);
+				this->SetActorRotation(qRotation, ETeleportType::None);
+			}
 
 		}
 		if (isPressed == false) {
@@ -182,6 +187,12 @@ void APlayerPawn::Tick(float DeltaTime)
 			if (this->GetActorRotation().Yaw < 0) {
 				this->AddActorLocalRotation(qRotation, false, 0, ETeleportType::None);
 			}
+			if (this->GetActorRotation().Yaw > 0) {
+				 newRotation = FRotator(0.0f, 0.0f, 0.0f);
+				 qRotation = FQuat(newRotation);
+				this->SetActorRotation(qRotation, ETeleportType::None);
+			}
+
 		}
 
 	}
