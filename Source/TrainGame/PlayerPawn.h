@@ -8,7 +8,7 @@
 #include "Engine.h"
 
 #include "InputCore.h"
-#include "UMG.h"
+
 
 #include "Slate.h"
 #include "SlateCore.h"
