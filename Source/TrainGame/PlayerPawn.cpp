@@ -138,7 +138,7 @@ void APlayerPawn::Tick(float DeltaTime)
 	}
 
 
-	m_floatingPawnMovement->AddInputVector(this->GetActorForwardVector() / 2.0f);
+	m_floatingPawnMovement->AddInputVector(this->GetActorForwardVector() / 1.5f);
 
 
 	if (moveRight == true) {

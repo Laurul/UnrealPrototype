@@ -64,6 +64,6 @@ void ATriggerBoxUI::OnOverlapEnd(AActor* OverLappedActor, AActor* OtherActor)
 void ATriggerBoxUI::BeginPlay() {
 	Super::BeginPlay();
 	//playerToManage=UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
-	DrawDebugBox(GetWorld(), GetActorLocation(), GetComponentsBoundingBox().GetExtent(), FColor::Blue, true, -1, 0, 5);
+	//DrawDebugBox(GetWorld(), GetActorLocation(), GetComponentsBoundingBox().GetExtent(), FColor::Transparent, true, -1, 0, 5);
 }
 
