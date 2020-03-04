@@ -11,7 +11,6 @@
 
 
 
-
 // Sets default values
 APlayerPawn::APlayerPawn()
 {
@@ -24,7 +23,7 @@ APlayerPawn::APlayerPawn()
 	Camera->SetupAttachment(StaticMesh);
 	SetRootComponent(StaticMesh);
 	playerController = UGameplayStatics::GetPlayerController(this, 0);
-	
+
 
 }
 
@@ -86,7 +85,7 @@ void APlayerPawn::Redress()
 
 APlayerController* APlayerPawn::returnPlayerID()
 {
-	
+
 	return playerController;
 }
 
@@ -217,6 +216,3 @@ void APlayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAction("Left", IE_Pressed, this, &APlayerPawn::PressedFalse);
 	PlayerInputComponent->BindAction("Redress", IE_Pressed, this, &APlayerPawn::Redress);
 }
-
-
-

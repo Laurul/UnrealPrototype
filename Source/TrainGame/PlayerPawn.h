@@ -9,7 +9,6 @@
 
 #include "InputCore.h"
 
-
 #include "Slate.h"
 #include "SlateCore.h"
 #include "GameFramework/Pawn.h"
@@ -60,7 +59,7 @@ protected:
 		float RollValue;
 	UPROPERTY(BlueprintReadWrite)
 		float rotationAngle;
-	
+
 
 public:
 	// Called every frame
@@ -90,7 +89,7 @@ private:
 	int currentTrack = 0;
 	bool moveRight = false;
 	bool moveLeft = false;
-	
+
 		APlayerController* playerController;
 	FVector2D TouchStart2dVector;
 	FVector2D TouchEnd2dVector;
